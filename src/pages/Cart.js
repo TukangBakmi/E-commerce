@@ -158,9 +158,9 @@ export default function Cart() {
                     <span>Total</span>
                     <span>${total.toFixed(2)}</span>
                   </div>
-                  <button className="btn btn-primary w-100 mt-3">
+                  <Link to="/checkout" className="btn btn-primary w-100 mt-3">
                     Checkout
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

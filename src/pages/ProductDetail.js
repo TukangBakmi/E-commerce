@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Toast from '../components/Toast';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -7,6 +8,7 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -41,7 +43,7 @@ export default function ProductDetail() {
     // Dispatch storage event to update cart count in navbar
     window.dispatchEvent(new Event('storage'));
     
-    alert('Ditambahkan ke keranjang!');
+    setShowToast(true);
   };
 
   if (loading) return (
@@ -62,7 +64,14 @@ export default function ProductDetail() {
   );
 
   return (
-    <div className="container py-5 mt-5">
+    <>
+      <Toast
+        message="Added to cart!"
+        type="success"
+        show={showToast}
+        onClose={() => setShowToast(false)}
+      />
+      <div className="container py-5 mt-5">
       <div className="row">
         <div className="col-md-5">
           <div className="card border-0">
@@ -135,5 +144,6 @@ export default function ProductDetail() {
         </div>
       </div>
     </div>
+    </>
   );
 }
