@@ -11,7 +11,7 @@ A modern, responsive e-commerce website built with React and Bootstrap, featurin
 
 ### Mobile View
 ![Homepage Mobile](screenshots/mobile-home.png)
-![Mobile Navigation](screenshots/mobile-nav.png)
+![Mobile Navigation](screenshots/mobile-cart.png)
 
 ## 🚀 Features
 
