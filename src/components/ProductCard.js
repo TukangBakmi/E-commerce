@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
       <div className="card h-100 shadow-sm hover-shadow" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)'}}>
         <div className="position-relative">
           {product.category && (
-            <span className="position-absolute top-0 end-0 bg-gradient text-white px-3 py-1 m-2 rounded-pill small fw-bold" style={{background: 'linear-gradient(45deg, #0d6efd, #6610f2)'}}>
+            <span className="position-absolute top-0 end-0 text-white px-2 py-1 m-2 rounded-pill" style={{background: 'rgba(13, 110, 253, 0.8)', boxShadow: '0 1px 4px rgba(0,0,0,0.2)', zIndex: 10, fontSize: '0.7rem'}}>
               {product.category.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
             </span>
           )}
