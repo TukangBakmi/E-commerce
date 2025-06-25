@@ -2,6 +2,17 @@
 
 A modern, responsive e-commerce website built with React and Bootstrap, featuring a clean UI with glass morphism effects and smooth animations.
 
+## 📸 Screenshots
+
+### Desktop View
+![Homepage Desktop](screenshots/desktop-home.png)
+![Product Grid](screenshots/desktop-products.png)
+![Shopping Cart](screenshots/desktop-cart.png)
+
+### Mobile View
+![Homepage Mobile](screenshots/mobile-home.png)
+![Mobile Navigation](screenshots/mobile-nav.png)
+
 ## 🚀 Features
 
 - **Modern UI Design**: Glass morphism effects, gradient backgrounds, and smooth animations
