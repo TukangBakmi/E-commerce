@@ -62,14 +62,14 @@ export default function Cart() {
       ) : (
         <>
           <div className="table-responsive">
-            <table className="table align-middle">
+            <table className="table align-middle" style={{background: 'rgba(255,255,255,0.3)', backdropFilter: 'blur(10px)', borderRadius: '15px', overflow: 'hidden'}}>
               <thead>
-                <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Subtotal</th>
-                  <th scope="col"></th>
+                <tr style={{background: 'linear-gradient(45deg, #0d6efd, #6610f2)', color: 'white'}}>
+                  <th scope="col" className="fw-bold py-3 ps-5">Product</th>
+                  <th scope="col" className="text-center fw-bold py-3">Price</th>
+                  <th scope="col" className="text-center fw-bold py-3">Quantity</th>
+                  <th scope="col" className="text-center fw-bold py-3">Subtotal</th>
+                  <th scope="col" className="text-center fw-bold py-3"></th>
                 </tr>
               </thead>
               <tbody>
@@ -78,51 +78,58 @@ export default function Cart() {
                   const subtotal = item.price * quantity;
                   
                   return (
-                    <tr key={index}>
-                      <td>
+                    <tr key={index} style={{borderBottom: '1px solid rgba(255,255,255,0.2)'}}>
+                      <td className="py-4 ps-3">
                         <div className="d-flex align-items-center">
-                          <img 
-                            src={item.image} 
-                            alt={item.title} 
-                            style={{ width: '60px', height: '60px', objectFit: 'contain' }}
-                            className="me-3"
-                          />
+                          <div className="me-3" style={{background: 'rgba(255,255,255,0.5)', borderRadius: '10px', padding: '8px'}}>
+                            <img 
+                              src={item.image} 
+                              alt={item.title} 
+                              style={{ width: '50px', height: '50px', objectFit: 'contain' }}
+                            />
+                          </div>
                           <div>
-                            <Link to={`/product/${item.id}`} className="text-decoration-none">
+                            <Link to={`/product/${item.id}`} className="text-decoration-none fw-semibold" style={{color: '#2c3e50'}}>
                               {item.title.length > 30 ? item.title.substring(0, 30) + '...' : item.title}
                             </Link>
                           </div>
                         </div>
                       </td>
-                      <td>${item.price}</td>
+                      <td className="fw-bold text-center" style={{color: '#0d6efd'}}>${item.price}</td>
                       <td>
-                        <div className="input-group" style={{ width: '120px' }}>
-                          <button 
-                            className="btn btn-outline-secondary btn-sm" 
-                            type="button"
-                            onClick={() => updateQuantity(index, quantity - 1)}
-                          >-</button>
-                          <input 
-                            type="text" 
-                            className="form-control form-control-sm text-center" 
-                            value={quantity}
-                            onChange={(e) => {
-                              const val = parseInt(e.target.value);
-                              if (!isNaN(val)) updateQuantity(index, val);
-                            }}
-                          />
-                          <button 
-                            className="btn btn-outline-secondary btn-sm" 
-                            type="button"
-                            onClick={() => updateQuantity(index, quantity + 1)}
-                          >+</button>
+                        <div className="d-flex justify-content-center">
+                          <div className="input-group" style={{ width: '120px' }}>
+                            <button 
+                              className="btn btn-sm" 
+                              type="button"
+                              onClick={() => updateQuantity(index, quantity - 1)}
+                              style={{background: 'rgba(108, 117, 125, 0.2)', border: 'none', borderRadius: '8px 0 0 8px', color: '#495057'}}
+                            >-</button>
+                            <input 
+                              type="text" 
+                              className="form-control form-control-sm text-center fw-bold" 
+                              value={quantity}
+                              onChange={(e) => {
+                                const val = parseInt(e.target.value);
+                                if (!isNaN(val)) updateQuantity(index, val);
+                              }}
+                              style={{background: 'rgba(255,255,255,0.8)', border: 'none'}}
+                            />
+                            <button 
+                              className="btn btn-sm" 
+                              type="button"
+                              onClick={() => updateQuantity(index, quantity + 1)}
+                              style={{background: 'rgba(108, 117, 125, 0.2)', border: 'none', borderRadius: '0 8px 8px 0', color: '#495057'}}
+                            >+</button>
+                          </div>
                         </div>
                       </td>
-                      <td>${subtotal.toFixed(2)}</td>
+                      <td className="fw-bold text-center" style={{color: '#28a745', fontSize: '1.1rem'}}>${subtotal.toFixed(2)}</td>
                       <td>
                         <button 
-                          className="btn btn-sm btn-outline-danger"
+                          className="btn btn-sm"
                           onClick={() => removeItem(index)}
+                          style={{background: 'rgba(220, 53, 69, 0.1)', color: '#dc3545', border: 'none', borderRadius: '8px', padding: '8px 12px'}}
                         >
                           <i className="fas fa-trash"></i>
                         </button>
