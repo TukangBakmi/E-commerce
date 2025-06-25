@@ -67,7 +67,7 @@ export default function Home() {
                     <button className="btn btn-light btn-lg px-4 py-2" style={{borderRadius: '25px', fontWeight: '600', boxShadow: '0 4px 15px rgba(0,0,0,0.2)'}}>Shop Now</button>
                   </div>
                   <div className="col-md-6 d-none d-md-block text-end">
-                    <img src="https://placehold.co/400x200?text=Shop+Now" className="img-fluid rounded" alt="Shop Now" />
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop&crop=center" className="img-fluid rounded" alt="Shop Now" />
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function Home() {
                     <button className="btn btn-light btn-lg px-4 py-2" style={{borderRadius: '25px', fontWeight: '600', boxShadow: '0 4px 15px rgba(0,0,0,0.2)'}}>View New Items</button>
                   </div>
                   <div className="col-md-6 d-none d-md-block text-end">
-                    <img src="https://placehold.co/400x200?text=New+Arrivals" className="img-fluid rounded" alt="New Arrivals" />
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=200&fit=crop&crop=center" className="img-fluid rounded" alt="New Arrivals" />
                   </div>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function Home() {
                     <button className="btn btn-light btn-lg px-4 py-2" style={{borderRadius: '25px', fontWeight: '600', boxShadow: '0 4px 15px rgba(0,0,0,0.2)'}}>See Offers</button>
                   </div>
                   <div className="col-md-6 d-none d-md-block text-end">
-                    <img src="https://placehold.co/400x200?text=Special+Offers" className="img-fluid rounded" alt="Special Offers" />
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=200&fit=crop&crop=center" className="img-fluid rounded" alt="Special Offers" />
                   </div>
                 </div>
               </div>
