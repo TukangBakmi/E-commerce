@@ -52,7 +52,7 @@ export default function Checkout() {
       <div className="row">
         <div className="col-12 col-lg-8 mb-4 mb-lg-0">
           <form onSubmit={handleSubmit}>
-            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.25)', backdropFilter: 'blur(15px)', border: '1px solid rgba(255,255,255,0.3)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
               <div className="card-header" style={{background: 'linear-gradient(45deg, #0d6efd, #6610f2)', color: 'white'}}>
                 <h5 className="mb-0">Contact Information</h5>
               </div>
@@ -69,7 +69,7 @@ export default function Checkout() {
               </div>
             </div>
 
-            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.25)', backdropFilter: 'blur(15px)', border: '1px solid rgba(255,255,255,0.3)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
               <div className="card-header" style={{background: 'linear-gradient(45deg, #28a745, #20c997)', color: 'white'}}>
                 <h5 className="mb-0">Shipping Address</h5>
               </div>
@@ -134,7 +134,7 @@ export default function Checkout() {
               </div>
             </div>
 
-            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.25)', backdropFilter: 'blur(15px)', border: '1px solid rgba(255,255,255,0.3)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
               <div className="card-header" style={{background: 'linear-gradient(45deg, #ffc107, #fd7e14)', color: 'white'}}>
                 <h5 className="mb-0">Payment Information</h5>
               </div>
@@ -182,7 +182,7 @@ export default function Checkout() {
         </div>
 
         <div className="col-12 col-lg-4">
-          <div className="card" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+          <div className="card" style={{background: 'rgba(255,255,255,0.25)', backdropFilter: 'blur(15px)', border: '1px solid rgba(255,255,255,0.3)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
             <div className="card-header" style={{background: 'linear-gradient(45deg, #6f42c1, #e83e8c)', color: 'white'}}>
               <h5 className="mb-0">Order Summary</h5>
             </div>
