@@ -60,29 +60,31 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light px-4 fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light px-4 fixed-top">
       <div className="container">
-        <Link className="navbar-brand fs-2" to="/" onClick={handleHomeClick}>HelloMart</Link>
+        <Link className="navbar-brand fs-2 fw-bold text-primary" to="/" onClick={handleHomeClick}>
+          <i className="fas fa-store me-2"></i>HelloMart
+        </Link>
 
         <div className="collapse navbar-collapse justify-content-end me-4">
           <form className="d-flex" onSubmit={handleSearch}>
             <input
               className="form-control"
               type="search"
-              placeholder="Cari produk..."
+              placeholder="Search products..."
               aria-label="Search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              style={{borderRadius: '6px 0 0 6px', width: '40vw'}}
+              style={{borderRadius: '25px 0 0 25px', width: '40vw', border: 'none', boxShadow: '0 2px 10px rgba(0,0,0,0.1)'}}
             />
-            <button className="btn btn-outline-secondary" type="submit" style={{borderRadius: '0 6px 6px 0'}}>
+            <button className="btn btn-primary" type="submit" style={{borderRadius: '0 25px 25px 0', border: 'none'}}>
               <i className="fas fa-search me-1"></i>
             </button>
           </form>
         </div>
 
         <div className="d-flex">
-          <Link to="/cart" className="btn btn-outline-primary position-relative">
+          <Link to="/cart" className="btn btn-primary position-relative px-3 py-2" style={{borderRadius: '15px'}}>
             <i className="fas fa-shopping-cart me-1"></i>
             {cartCount > 0 && (
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

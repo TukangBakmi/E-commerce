@@ -71,9 +71,17 @@ export default function ProductDetail() {
         show={showToast}
         onClose={() => setShowToast(false)}
       />
-      <div className="container py-5 mt-5">
-      <div className="row">
+      <div className="container my-5">
+        <div className="row">
         <div className="col-md-5">
+          <div className="ps-4">
+            <button 
+              className="btn btn-outline-secondary mb-3"
+              onClick={() => navigate(-1)}
+            >
+              <i className="fas fa-arrow-left me-2"></i>Back
+            </button>
+          </div>
           <div className="card border-0">
             <img 
               src={product.image} 
@@ -88,7 +96,6 @@ export default function ProductDetail() {
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a href="/" className="text-decoration-none">Home</a></li>
               <li className="breadcrumb-item"><a href="/" className="text-decoration-none">{product.category}</a></li>
-              <li className="breadcrumb-item active" aria-current="page">{product.title}</li>
             </ol>
           </nav>
           
@@ -133,7 +140,7 @@ export default function ProductDetail() {
               onClick={handleAddToCart}
             >
               <i className="fas fa-shopping-cart me-2"></i>
-              Tambah ke Keranjang
+              Add to Cart
             </button>
           </div>
           

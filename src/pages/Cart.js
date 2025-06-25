@@ -51,13 +51,13 @@ export default function Cart() {
   };
 
   return (
-    <div className="container py-5 mt-5">
-      <h2 className="mb-4">Keranjang Belanja</h2>
+    <div className="container my-5">
+      <h2 className="mb-4 fw-bold" style={{color: '#2c3e50'}}>🛒 Shopping Cart</h2>
       
       {cart.length === 0 ? (
         <div className="text-center py-5">
-          <p className="mb-4">Keranjang belanja Anda kosong</p>
-          <Link to="/" className="btn btn-primary">Mulai Belanja</Link>
+          <p className="mb-4">Your shopping cart is empty</p>
+          <Link to="/" className="btn btn-primary px-4 py-2" style={{borderRadius: '25px', fontWeight: '600'}}>Start Shopping</Link>
         </div>
       ) : (
         <>
@@ -65,9 +65,9 @@ export default function Cart() {
             <table className="table align-middle">
               <thead>
                 <tr>
-                  <th scope="col">Produk</th>
-                  <th scope="col">Harga</th>
-                  <th scope="col">Jumlah</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
                   <th scope="col">Subtotal</th>
                   <th scope="col"></th>
                 </tr>
@@ -136,29 +136,29 @@ export default function Cart() {
           
           <div className="row mt-4">
             <div className="col-md-6">
-              <Link to="/" className="btn btn-outline-primary">
+              <Link to="/" className="btn btn-outline-primary px-4 py-2" style={{borderRadius: '25px', fontWeight: '600'}}>
                 <i className="fas fa-arrow-left me-2"></i>
-                Lanjutkan Belanja
+                Continue Shopping
               </Link>
             </div>
             <div className="col-md-6">
-              <div className="card">
+              <div className="card" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
                 <div className="card-body">
-                  <h5 className="card-title">Ringkasan Belanja</h5>
+                  <h5 className="card-title">Order Summary</h5>
                   <div className="d-flex justify-content-between mb-2">
                     <span>Subtotal</span>
                     <span>${total.toFixed(2)}</span>
                   </div>
                   <div className="d-flex justify-content-between mb-2">
-                    <span>Pengiriman</span>
-                    <span>Gratis</span>
+                    <span>Shipping</span>
+                    <span>Free</span>
                   </div>
                   <hr />
                   <div className="d-flex justify-content-between fw-bold">
                     <span>Total</span>
                     <span>${total.toFixed(2)}</span>
                   </div>
-                  <Link to="/checkout" className="btn btn-primary w-100 mt-3">
+                  <Link to="/checkout" className="btn btn-primary w-100 mt-3 py-2" style={{borderRadius: '15px', fontWeight: '600', background: 'linear-gradient(45deg, #0d6efd, #6610f2)'}}>
                     Checkout
                   </Link>
                 </div>

@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,58 +38,73 @@
 }
 
 .hover-shadow {
-  transition: box-shadow 0.3s ease;
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-/* Custom styles for beautification */
-.hover-shadow {
   transition: all 0.3s ease;
 }
 
 .hover-shadow:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
 }
 
-.transition {
+.btn {
   transition: all 0.3s ease;
+  border-radius: 10px;
+  font-weight: 500;
 }
 
-.pagination .page-link {
-  color: #0d6efd;
-  border-radius: 0;
-}
-
-.pagination .page-item.active .page-link {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-.card {
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.btn-outline-primary:hover {
+.btn:hover {
   transform: translateY(-2px);
 }
 
-/* Fix carousel control icon color */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1) grayscale(100);
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
 }
-/* Make carousel control icons smaller */
+
+.navbar {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+  transform: translateY(-1px);
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
+  filter: invert(1);
   width: 15px !important;
   height: 15px !important;
-  font-weight: bolder;
 }
-/* Add padding to body for fixed navbar */
-body {
-  padding-top: 70px;
+
+.pagination .page-link {
+  border-radius: 8px !important;
+  margin: 0 2px;
+  border: none;
+  color: #0d6efd;
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(45deg, #0d6efd, #6610f2);
+  transform: scale(1.1);
+}
+
+.badge {
+  border-radius: 20px;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

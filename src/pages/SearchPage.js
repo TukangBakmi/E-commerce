@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
 export default function SearchPage() {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [filtered, setFiltered] = useState([]);
@@ -43,8 +45,14 @@ export default function SearchPage() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container mt-4">
-      <h4>Hasil pencarian untuk: <strong>{query}</strong></h4>
+    <div className="container mt-5">
+      <button 
+        className="btn btn-outline-secondary mb-3"
+        onClick={() => navigate(-1)}
+      >
+        <i className="fas fa-arrow-left me-2"></i>Back
+      </button>
+      <h4>Search results for: <strong>{query}</strong></h4>
       <div className="mb-3">
         <div className="d-flex flex-wrap gap-2">
           {categories.map((cat, idx) => (
@@ -58,20 +66,17 @@ export default function SearchPage() {
           ))}
         </div>
       </div>
-      <div className="row">
-        {filtered.length === 0 && <p>Tidak ada produk ditemukan.</p>}
-        {currentProducts.map(product => (
-          <div className="col-md-4 mb-3" key={product.id}>
-            <div className="card h-100">
-              <img src={product.image} className="card-img-top" alt={product.title} height="200" style={{objectFit: 'contain'}} />
-              <div className="card-body">
-                <h6 className="card-title">{product.title}</h6>
-                <p className="card-text">${product.price}</p>
-              </div>
+      {filtered.length === 0 ? (
+        <p>No products found.</p>
+      ) : (
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          {currentProducts.map(product => (
+            <div className="col" key={product.id}>
+              <ProductCard product={product} />
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
       
       {filtered.length > 0 && (
         <div className="d-flex justify-content-center mt-4">

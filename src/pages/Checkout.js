@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Toast from "../components/Toast";
 
@@ -16,13 +16,15 @@ export default function Checkout() {
     cvv: ""
   });
   const [showToast, setShowToast] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [total, setTotal] = useState(0);
 
-  const cartItems = [
-    { id: 1, title: "Fjallraven - Foldsack No. 1 Backpack", price: 109.95, quantity: 2 },
-    { id: 2, title: "Mens Casual Premium Slim Fit T-Shirts", price: 22.3, quantity: 1 }
-  ];
-
-  const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartItems(cart);
+    const sum = cart.reduce((acc, item) => acc + (item.price * (item.quantity || 1)), 0);
+    setTotal(sum);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,6 +32,8 @@ export default function Checkout() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.removeItem('cart');
+    window.dispatchEvent(new Event('storage'));
     setShowToast(true);
     setTimeout(() => navigate("/"), 2000);
   };
@@ -42,15 +46,15 @@ export default function Checkout() {
         show={showToast}
         onClose={() => setShowToast(false)}
       />
-      <div className="container mt-5 pt-4">
-        <h2 className="mb-4">Checkout</h2>
+      <div className="container my-5">
+        <h2 className="mb-4 fw-bold" style={{color: '#2c3e50'}}>💳 Checkout</h2>
       
       <div className="row">
         <div className="col-md-8">
           <form onSubmit={handleSubmit}>
-            <div className="card mb-4">
-              <div className="card-header">
-                <h5>Contact Information</h5>
+            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+              <div className="card-header" style={{background: 'linear-gradient(45deg, #0d6efd, #6610f2)', color: 'white'}}>
+                <h5 className="mb-0">Contact Information</h5>
               </div>
               <div className="card-body">
                 <input
@@ -65,9 +69,9 @@ export default function Checkout() {
               </div>
             </div>
 
-            <div className="card mb-4">
-              <div className="card-header">
-                <h5>Shipping Address</h5>
+            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+              <div className="card-header" style={{background: 'linear-gradient(45deg, #28a745, #20c997)', color: 'white'}}>
+                <h5 className="mb-0">Shipping Address</h5>
               </div>
               <div className="card-body">
                 <div className="row">
@@ -130,9 +134,9 @@ export default function Checkout() {
               </div>
             </div>
 
-            <div className="card mb-4">
-              <div className="card-header">
-                <h5>Payment Information</h5>
+            <div className="card mb-4" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+              <div className="card-header" style={{background: 'linear-gradient(45deg, #ffc107, #fd7e14)', color: 'white'}}>
+                <h5 className="mb-0">Payment Information</h5>
               </div>
               <div className="card-body">
                 <input
@@ -171,27 +175,38 @@ export default function Checkout() {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-success btn-lg w-100">
+            <button type="submit" className="btn btn-lg w-100 py-3" style={{background: 'linear-gradient(45deg, #28a745, #20c997)', border: 'none', borderRadius: '15px', fontWeight: '600', color: 'white'}}>
               Place Order - ${total.toFixed(2)}
             </button>
           </form>
         </div>
 
         <div className="col-md-4">
-          <div className="card">
-            <div className="card-header">
-              <h5>Order Summary</h5>
+          <div className="card" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
+            <div className="card-header" style={{background: 'linear-gradient(45deg, #6f42c1, #e83e8c)', color: 'white'}}>
+              <h5 className="mb-0">Order Summary</h5>
             </div>
             <div className="card-body">
-              {cartItems.map(item => (
-                <div key={item.id} className="d-flex justify-content-between mb-2">
-                  <span>{item.title.substring(0, 20)}... x{item.quantity}</span>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
-                </div>
-              ))}
+              {cartItems.map(item => {
+                const quantity = item.quantity || 1;
+                return (
+                  <div key={item.id} className="d-flex justify-content-between mb-2">
+                    <span>{item.title.substring(0, 20)}... x{quantity}</span>
+                    <span>${(item.price * quantity).toFixed(2)}</span>
+                  </div>
+                );
+              })}
+              <div className="d-flex justify-content-between mb-2">
+                <span>Subtotal</span>
+                <span>${total.toFixed(2)}</span>
+              </div>
+              <div className="d-flex justify-content-between mb-2">
+                <span>Shipping</span>
+                <span>Free</span>
+              </div>
               <hr />
               <div className="d-flex justify-content-between fw-bold">
-                <span>Total:</span>
+                <span>Total</span>
                 <span>${total.toFixed(2)}</span>
               </div>
             </div>
