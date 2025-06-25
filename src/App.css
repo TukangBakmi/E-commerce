@@ -109,6 +109,12 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
 @media (max-width: 768px) {
   .container {
     padding-left: 15px;
