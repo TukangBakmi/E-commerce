@@ -66,8 +66,12 @@ export default function Navbar() {
           <i className="fas fa-store me-2"></i>HelloMart
         </Link>
 
-        <div className="collapse navbar-collapse justify-content-end me-4">
-          <form className="d-flex" onSubmit={handleSearch}>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <form className="d-flex mx-auto my-2 my-lg-0" onSubmit={handleSearch} style={{width: '100%', maxWidth: '500px'}}>
             <input
               className="form-control"
               type="search"
@@ -75,15 +79,15 @@ export default function Navbar() {
               aria-label="Search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              style={{borderRadius: '25px 0 0 25px', width: '40vw', border: 'none', boxShadow: '0 2px 10px rgba(0,0,0,0.1)'}}
+              style={{borderRadius: '25px 0 0 25px', border: 'none', boxShadow: '0 2px 10px rgba(0,0,0,0.1)'}}
             />
             <button className="btn btn-primary" type="submit" style={{borderRadius: '0 25px 25px 0', border: 'none'}}>
-              <i className="fas fa-search me-1"></i>
+              <i className="fas fa-search"></i>
             </button>
           </form>
         </div>
 
-        <div className="d-flex">
+        <div className="d-flex ms-auto">
           <Link to="/cart" className="btn btn-primary position-relative px-3 py-2" style={{borderRadius: '15px'}}>
             <i className="fas fa-shopping-cart me-1"></i>
             {cartCount > 0 && (

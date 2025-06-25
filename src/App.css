@@ -108,3 +108,34 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+  }
+  
+  .card-title {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem !important;
+  }
+}

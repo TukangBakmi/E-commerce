@@ -50,7 +50,7 @@ export default function Checkout() {
         <h2 className="mb-4 fw-bold" style={{color: '#2c3e50'}}>💳 Checkout</h2>
       
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-12 col-lg-8 mb-4 mb-lg-0">
           <form onSubmit={handleSubmit}>
             <div className="card mb-4" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
               <div className="card-header" style={{background: 'linear-gradient(45deg, #0d6efd, #6610f2)', color: 'white'}}>
@@ -75,7 +75,7 @@ export default function Checkout() {
               </div>
               <div className="card-body">
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-12 col-sm-6">
                     <input
                       type="text"
                       name="firstName"
@@ -86,7 +86,7 @@ export default function Checkout() {
                       required
                     />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-12 col-sm-6">
                     <input
                       type="text"
                       name="lastName"
@@ -108,7 +108,7 @@ export default function Checkout() {
                   required
                 />
                 <div className="row">
-                  <div className="col-md-8">
+                  <div className="col-12 col-sm-8">
                     <input
                       type="text"
                       name="city"
@@ -119,7 +119,7 @@ export default function Checkout() {
                       required
                     />
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-12 col-sm-4">
                     <input
                       type="text"
                       name="zipCode"
@@ -149,7 +149,7 @@ export default function Checkout() {
                   required
                 />
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-12 col-sm-6">
                     <input
                       type="text"
                       name="expiryDate"
@@ -160,7 +160,7 @@ export default function Checkout() {
                       required
                     />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-12 col-sm-6">
                     <input
                       type="text"
                       name="cvv"
@@ -181,7 +181,7 @@ export default function Checkout() {
           </form>
         </div>
 
-        <div className="col-md-4">
+        <div className="col-12 col-lg-4">
           <div className="card" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
             <div className="card-header" style={{background: 'linear-gradient(45deg, #6f42c1, #e83e8c)', color: 'white'}}>
               <h5 className="mb-0">Order Summary</h5>

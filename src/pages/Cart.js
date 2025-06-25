@@ -135,13 +135,13 @@ export default function Cart() {
           </div>
           
           <div className="row mt-4">
-            <div className="col-md-6">
-              <Link to="/" className="btn btn-outline-primary px-4 py-2" style={{borderRadius: '25px', fontWeight: '600'}}>
+            <div className="col-12 col-md-6 mb-3 mb-md-0">
+              <Link to="/" className="btn btn-outline-primary px-4 py-2 w-100 w-md-auto" style={{borderRadius: '25px', fontWeight: '600'}}>
                 <i className="fas fa-arrow-left me-2"></i>
                 Continue Shopping
               </Link>
             </div>
-            <div className="col-md-6">
+            <div className="col-12 col-md-6">
               <div className="card" style={{background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)'}}>
                 <div className="card-body">
                   <h5 className="card-title">Order Summary</h5>
