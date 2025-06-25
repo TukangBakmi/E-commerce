@@ -15,13 +15,15 @@ A modern, responsive e-commerce website built with React and Bootstrap, featurin
 
 ## 🚀 Features
 
-- **Modern UI Design**: Glass morphism effects, gradient backgrounds, and smooth animations
-- **Responsive Layout**: Optimized for mobile, tablet, and desktop devices
-- **Product Catalog**: Browse products by categories with pagination
-- **Search Functionality**: Real-time product search with filtering
-- **Shopping Cart**: Add/remove items, quantity management, persistent storage
-- **Checkout Process**: Complete order flow with form validation
-- **Interactive Carousel**: Hero section with navigation buttons
+- **Modern UI Design**: True glass morphism effects, gradient backgrounds, and smooth animations
+- **Responsive Layout**: Fully optimized for mobile, tablet, and desktop devices
+- **Product Catalog**: Browse products by categories with pagination and hover effects
+- **Search Functionality**: Real-time product search with filtering and responsive results
+- **Enhanced Shopping Cart**: Modern table design with glass effects, quantity controls, and persistent storage
+- **Checkout Process**: Multi-step form with gradient headers and glass morphism cards
+- **Interactive Carousel**: Hero section with smooth navigation and real product images
+- **Toast Notifications**: Animated alerts with shake effect and smooth fade-out
+- **Dynamic Text Truncation**: Responsive product titles that adapt to container width
 
 ## 🛠️ Technologies Used
 
@@ -72,11 +74,13 @@ src/
 
 ## 🎨 Design Features
 
-- **Glass Morphism**: Semi-transparent cards with backdrop blur
-- **Gradient Backgrounds**: Modern color schemes throughout
-- **Hover Animations**: Smooth transitions and transforms
-- **Responsive Grid**: Adaptive layout for all screen sizes
-- **Modern Typography**: Clean, readable font hierarchy
+- **True Glass Morphism**: Semi-transparent elements (25% opacity) with 15px backdrop blur
+- **Gradient Backgrounds**: Modern color schemes with smooth transitions
+- **Micro-Animations**: Hover effects, shake notifications, and smooth transitions
+- **Enhanced Tables**: Glass effect cart table with gradient headers
+- **Responsive Grid**: Adaptive layout (2/3/4 columns) for all screen sizes
+- **Modern Typography**: Clean hierarchy with dynamic text truncation
+- **Visual Feedback**: Animated toasts, hover states, and loading indicators
 
 ## 📱 Responsive Breakpoints
 
@@ -84,13 +88,15 @@ src/
 - **Tablet**: 768px - 992px (3 columns product grid)
 - **Desktop**: > 992px (4 columns product grid)
 
-## 🛒 Cart Features
+## 🛒 Enhanced Cart Features
 
-- Persistent storage using localStorage
-- Real-time cart count in navbar
-- Quantity management (increase/decrease)
-- Item removal functionality
-- Order summary with totals
+- **Modern Table Design**: Glass morphism with gradient headers
+- **Persistent Storage**: localStorage with real-time navbar updates
+- **Smart Quantity Controls**: Glass effect buttons with instant updates
+- **Dynamic Product Display**: Responsive image containers and text truncation
+- **Visual Hierarchy**: Color-coded prices and totals
+- **Smooth Interactions**: Hover effects and animated feedback
+- **Order Summary**: Glass effect cards with detailed breakdowns
 
 ## 🔧 Available Scripts
 
